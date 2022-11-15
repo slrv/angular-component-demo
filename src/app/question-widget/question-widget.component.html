@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="question-container">
+    <span class="question">{{question}}</span>
+  </div>
+  <div class="answer-container" [ngClass]="state">
+    <div *ngIf="isAnswered; then answered else notAnswered"></div>
+  </div>
+</div>
+
+<ng-template #notAnswered>
+  <app-button
+    text="Yes"
+    type="success"
+    shape="oval"
+    (clicked)="answerEvent.emit('yes')"
+  ></app-button>
+
+  <app-button
+    text="No"
+    type="danger"
+    shape="oval"
+    (clicked)="answerEvent.emit('no')"
+  ></app-button>
+</ng-template>
+
+<ng-template #answered>
+  <span class="answered">You answered: {{state}}</span>
+</ng-template>

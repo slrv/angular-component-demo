@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AnswerState} from "./question-widget/question-widget.component";
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  click() {
-    console.log('Click handled')
+  state: AnswerState = 'none';
+
+  setState(state: AnswerState) {
+    this.state = state;
   }
 }

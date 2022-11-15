@@ -1,7 +1,17 @@
-<app-button
-  text="Click me"
-  shape="oval"
-  size="large"
-  type="danger"
-  (clicked)="click()"
-></app-button>
+<app-question-widget
+  question="Is it the question?"
+  [state]="state"
+  (answerEvent)="setState($event)"
+></app-question-widget>
+
+<app-question-widget
+  question="Is it the question?"
+  [state]="state"
+  (answerEvent)="setState($event)"
+></app-question-widget>
+
+<app-question-widget
+  question="Is it the question?"
+  [state]="state"
+  (answerEvent)="setState($event)"
+></app-question-widget>

@@ -1,0 +1,47 @@
+.card {
+  min-width: 100px;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.6);
+
+  &>.question-container {
+    height: 100px;
+    background-color: #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &>.question {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  &>.answer-container {
+    height: 50px;
+    padding: 15px;
+    width: calc(100% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &>.answered {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* state */
+    &.yes {
+      background-color: #7bdc7d;
+    }
+
+    &.no {
+      background-color: #e58787;
+    }
+
+    &.none {
+      background-color: white;
+    }
+  }
+}
