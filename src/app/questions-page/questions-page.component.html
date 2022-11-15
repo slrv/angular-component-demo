@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="header">Here my questions</h1>
+
+  <div class="widgets-container">
+    <app-question-widget
+      question="Is it the question?"
+      [state]="state"
+      (answerEvent)="setState($event)"
+    ></app-question-widget>
+
+    <app-question-widget
+      question="Is it the question?"
+      [state]="state"
+      (answerEvent)="setState($event)"
+    ></app-question-widget>
+
+    <app-question-widget
+      question="Is it the question?"
+      [state]="state"
+      (answerEvent)="setState($event)"
+    ></app-question-widget>
+  </div>
+</div>
+
+
