@@ -1,25 +1,25 @@
 <div class="container">
-  <h1 class="header">Here my questions</h1>
+  <h1 class="header">Mood tracker</h1>
 
-  <div class="widgets-container">
-    <app-question-widget
-      question="Is it the question?"
-      [state]="state"
-      (answerEvent)="setState($event)"
-    ></app-question-widget>
+  <h1 *ngIf="questionService.loading">Loading...</h1>
 
-    <app-question-widget
-      question="Is it the question?"
-      [state]="state"
-      (answerEvent)="setState($event)"
-    ></app-question-widget>
-
-    <app-question-widget
-      question="Is it the question?"
-      [state]="state"
-      (answerEvent)="setState($event)"
-    ></app-question-widget>
+  <div class="tracker-container" *ngIf="questionService.ready">
+    <div class="tracker-header-container">
+      <h3>Total score: {{questionService.currentScorePercentage}}%</h3>
+      <app-button
+        text="reset"
+        shape="rounded"
+        size="large"
+        type="primary"
+        (clicked)="questionService.reset()"
+      ></app-button>
+    </div>
+    <div class="widgets-container">
+      <app-question-widget *ngFor="let question of questions"
+                           [question]="question.question"
+                           [state]="questionService.getAnswerState(question.id)"
+                           (answerEvent)="questionService.setAnswerState(question.id, $event)"
+      ></app-question-widget>
+    </div>
   </div>
 </div>
-
-

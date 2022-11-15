@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AnswerState} from "../question-widget/question-widget.component";
+import {QuestionStateService} from "../question-state.service";
 
 @Component({
   selector: 'app-questions-page',
@@ -7,16 +7,13 @@ import {AnswerState} from "../question-widget/question-widget.component";
   styleUrls: ['./questions-page.component.scss']
 })
 export class QuestionsPageComponent implements OnInit {
+  constructor(public readonly questionService: QuestionStateService) {}
 
-  state: AnswerState = 'none';
-
-  setState(state: AnswerState) {
-    this.state = state;
+  get questions() {
+    return this.questionService.questions.sort((a, b) => a.order - b.order);
   }
-
-  constructor() { }
 
   ngOnInit(): void {
+    this.questionService.loadQuestions().then();
   }
-
 }

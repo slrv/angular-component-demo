@@ -1,12 +1,23 @@
 .container {
   min-width: 100%;
   max-width: 900px;
+
+  &>.tracker-container {
+    width: 100%;
+
+    &>.tracker-header-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &>.widgets-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 1em;
+    }
+  }
 }
 
-.widgets-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 1em;
-}
+
