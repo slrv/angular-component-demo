@@ -1,0 +1,62 @@
+.button {
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.3);
+  }
+
+  &:active {
+    filter: brightness(0.7);
+  }
+
+  &[disabled] {
+    filter: brightness(0.4);
+    cursor: inherit;
+  }
+
+  /* shape */
+  &.square {
+    border-radius: 10%;
+  }
+
+  &.rounded {
+    border-radius: 25%;
+  }
+
+  &.oval {
+    border-radius: 45%;
+  }
+
+  /* type */
+  &.primary {
+    background-color: #008CBA;
+  }
+
+  &.danger {
+    background-color: #f44336;
+  }
+
+  &.success {
+    background-color: #4CAF50;
+  }
+
+  /* size */
+  &.small {
+    font-size: 12px;
+    padding: 6px 6px;
+  }
+
+  &.medium {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  &.large {
+    font-size: 24px;
+    padding: 6px 20px;
+  }
+}
